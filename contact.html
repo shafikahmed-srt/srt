@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact | SRT</title><link rel="stylesheet" href="styles.css"/></head><body>
+<div class="topbar">
+  <div class="container">
+    <div><a href="tel:+96893309330">+968 9330 9330</a> • <a href="mailto:info@srt.om">info@srt.om</a></div>
+    <div>Al Amirat, Muscat • 24/7 Support</div>
+  </div>
+</div>
+
+<header>
+  <div class="container navwrap">
+    <a class="brand" href="index.html">
+      <img class="logo" src="assets/logo.png" alt="SRT" onerror="this.style.display='none'">
+      <div><b>SRT</b><small>Sult Al Rawahi Trading</small></div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="clients.html">Clients</a>
+      <a href="sla.html">SLA & Locations</a>
+      <a class="btn" href="contact.html">Contact</a>
+      <button class="langbtn" id="langBtn" onclick="toggleLang()">AR</button>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div data-lang="en"><h2>Contact</h2><p>Send your request and we will respond as soon as possible.</p></div>
+    <div data-lang="ar"><h2>تواصل معنا</h2><p>أرسل طلبك وسنقوم بالرد في أقرب وقت.</p></div>
+
+    <div class="grid grid2" style="margin-top:14px">
+      <div class="card">
+        <div data-lang="en">
+          <h3>Direct</h3>
+          <p class="small"><b>Phone:</b> <a href="tel:+96893309330">+968 9330 9330</a></p>
+          <p class="small"><b>Email:</b> <a href="mailto:info@srt.om">info@srt.om</a></p>
+          <p class="small"><b>WhatsApp:</b> <a target="_blank" rel="noopener" href="https://wa.me/96893309330">Chat on WhatsApp</a></p>
+        </div>
+        <div data-lang="ar">
+          <h3>مباشر</h3>
+          <p class="small"><b>الهاتف:</b> <a href="tel:+96893309330">+968 9330 9330</a></p>
+          <p class="small"><b>البريد:</b> <a href="mailto:info@srt.om">info@srt.om</a></p>
+          <p class="small"><b>واتساب:</b> <a target="_blank" rel="noopener" href="https://wa.me/96893309330">مراسلة واتساب</a></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Quick Message</h3>
+        <form onsubmit="return sendMail(event)">
+          <label>Name / الاسم
+            <input required name="name" placeholder="Your name / الاسم"/>
+          </label>
+          <label>Phone / الهاتف
+            <input required name="phone" placeholder="+968..."/>
+          </label>
+          <label>Message / الرسالة
+            <textarea required name="message" rows="5" placeholder="Write your request... / اكتب طلبك"></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+          <p class="small">This opens your email app. If you want a real web form that sends without email app, tell me and I’ll add Formspree (free).</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div data-lang="en"><h3>Map</h3><p class="small">SRT Location</p></div>
+      <div data-lang="ar"><h3>الخريطة</h3><p class="small">موقع SRT</p></div>
+
+      <a class="btn-outline" target="_blank" rel="noopener"
+         href="https://www.google.com/maps?q=23.5285269,58.4588787">
+         Open in Google Maps
+      </a>
+
+      <div style="border-radius:16px;overflow:hidden;border:1px solid var(--line);margin-top:12px">
+        <iframe title="SRT Location" loading="lazy" style="width:100%;height:320px;border:0;display:block"
+          src="https://www.google.com/maps?q=23.5285269,58.4588787&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function sendMail(e){
+  e.preventDefault();
+  const f = e.target;
+  const name = f.name.value.trim();
+  const phone = f.phone.value.trim();
+  const msg = f.message.value.trim();
+  const subject = encodeURIComponent("SRT Website Inquiry");
+  const body = encodeURIComponent("Name: " + name + "\nPhone: " + phone + "\n\nMessage:\n" + msg);
+  window.location.href = "mailto:info@srt.om?subject=" + subject + "&body=" + body;
+  return false;
+}
+</script>
+
+<footer>
+  <div class="container footerrow">
+    <div>© <span id="year"></span> SRT. All rights reserved.</div>
+    <div>+968 9330 9330 • info@srt.om</div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="i18n.js"></script>
+
+</body></html>
